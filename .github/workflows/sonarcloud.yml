@@ -12,14 +12,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        with:
-          projectKey: tanuj-26heisnbrg_github-copilot-demos
-          organization: tanuj-26heisnbrg
+        uses: SonarSource/sonarcloud-github-action@v2
         env:
-          SONAR_TOKEN:  ${{ secrets.SONAR_CLOUD }}
+          SONAR_TOKEN: ${{ secrets.SONAR_CLOUD }}
 
 
 
